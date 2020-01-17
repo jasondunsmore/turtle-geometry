@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 
 import turtle
-turtle.setup(width=600, height=600, startx=None, starty=None)
-t = turtle.Turtle()
+turtle.setup(width=600, height=800, startx=None, starty=None)
 turtle.delay(0)
+t = turtle.Turtle()
+t.hideturtle()
 
+def reset():
+    turtle.Screen().reset()
 
 def squarepiece(size=10):
     t.forward(size)
@@ -78,3 +81,22 @@ def arcl(r, deg):
         t.forward(r)
         t.left(1)
 
+def trianglething(deg=10, start=1, end=100, inc=1):
+    i = start
+    while i <= end:
+        triangle(i)
+        i += inc
+        t.right(deg)
+
+def spiderweb(start=1, end=200, inc=5):
+    i = start
+    # Draw lines to make web on
+    for i in range(6):
+        t.forward(500)
+        t.setpos(0,0)
+        t.right(60)
+    # Draw web
+    while i <= end:
+        triangle(i)
+        i += inc
+        t.right(60)
