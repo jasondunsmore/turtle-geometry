@@ -3,31 +3,33 @@
 import turtle
 turtle.setup(width=600, height=600, startx=None, starty=None)
 t = turtle.Turtle()
+turtle.delay(0)
 
-def squarepiece(size):
+
+def squarepiece(size=10):
     t.forward(size)
     t.right(90)
 
-def square(size):
+def square(size=10):
     for i in range(4):
         squarepiece(size)
 
-def rectangle(side1, side2):
+def rectangle(side1=10, side2=10):
     for i in range(2):
         squarepiece(side1)
         squarepiece(side2)
 
-def try_angle(size):
+def try_angle(size=10):
     for i in range(3):
         t.forward(size)
         t.right(60)
 
-def triangle(size):
+def triangle(size=10):
     for i in range(3):
         t.forward(size)
         t.right(120)
 
-def house(side):
+def house(side=10):
     t.left(90)
     square(side)
     t.forward(side)
@@ -56,10 +58,15 @@ def thing3():
         t.left(45)
         t.forward(100)
 
-def circle(size):
+def circle(size=1):
     for i in range(360):
         t.right(1)
         t.forward(size)
+
+def circlething(i=30):
+    for i in range(i):
+        circle(i+1)
+        circle(-i+1)
 
 def arcr(r, deg):
     for i in range(deg):
