@@ -100,3 +100,8 @@ def spiderweb(start=1, end=200, inc=5):
         triangle(i)
         i += inc
         t.right(60)
+
+def bubble(deg=50):
+    while True:
+        circle()
+        t.right(deg)
