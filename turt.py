@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 
 import turtle
-turtle.setup(width=600, height=800, startx=None, starty=None)
+turtle.setup(width=600, height=600, startx=None, starty=None)
 turtle.delay(0)
 t = turtle.Turtle()
-t.hideturtle()
 
 def reset():
     turtle.Screen().reset()
@@ -105,3 +104,33 @@ def bubble(deg=50):
     while True:
         circle()
         t.right(deg)
+
+def torus(size=20, deg=22):
+    while True:
+        circle(2)
+        t.forward(size)
+        t.right(deg)
+
+def petal(size=5):
+    arcr(size, 60)
+    t.right(120)
+    arcr(size, 60)
+    t.right(120)
+
+def flower(size=5):
+    for i in range(6):
+        petal(size)
+        t.right(60)
+
+def starburst(i=1):
+    flower(i)
+    starburst(i+1)
+
+def rectangle1(deg=50):
+    while True:
+        rectangle(10, 50)
+        t.forward(100)
+        t.right(deg)
+
+def windmill():
+    rectangle1(200)
