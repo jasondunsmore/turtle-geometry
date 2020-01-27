@@ -134,3 +134,47 @@ def rectangle1(deg=50):
 
 def windmill():
     rectangle1(200)
+
+def circles():
+    for i in range(9):
+        arcr(1, 360)
+        t.right(40)
+
+def ray(r):
+    for i in range(2):
+        arcl(r, 90)
+        arcr(r, 90)
+
+def sun(size=1):
+    for i in range(9):
+        ray(size)
+        t.right(160)
+
+def poly(side, angle):
+    while True:
+        t.forward(side)
+        t.right(angle)
+
+def newpoly(side, angle):
+    while True:
+        t.forward(side)
+        t.right(angle)
+        t.forward(side)
+        t.right(2*angle)
+
+def polyspi(side, angle):
+    t.forward(side)
+    t.right(angle)
+    polyspi(side + 1, angle)
+
+def polyspi2(side, angle, inc):
+    t.forward(side)
+    t.right(angle)
+    polyspi2(side + inc, angle, inc)
+
+def inspi(side, angle, inc):
+    t.forward(side)
+    t.right(angle)
+    inspi(side, angle + inc, inc)
+
+
